@@ -1,0 +1,10 @@
+services:
+  supervisor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: supervisor
+    volumes:
+      - ./docker/supervisor/conf.d/:/etc/supervisor/conf.d/
+      - ./docker/supervisor/supervisord.conf:/etc/supervisord.conf
+    restart: always
